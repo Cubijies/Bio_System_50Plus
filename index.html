@@ -494,30 +494,39 @@ details .detail-body{padding:0.75rem 0 0.25rem 1.25rem;font-size:0.82rem;color:v
 }
 .formulacion-doc .ingredient-card h4{margin-top:0}
 
-/* Print específico para formulaciones */
+/* Print específico para formulaciones — SOLO cuando body tiene .printing-formulacion */
 @media print{
-  #topbar,#sidebar,.page-header,.ia-config,
-  #formOutput > .card:first-child,
-  #formHistoryCard,.formulacion-doc + .card,
-  .page > *:not(#formOutput),
-  #formOutput > .card:first-child{display:none !important}
-  #formOutput{display:block !important}
-  .formulacion-doc{
+  /* Esta regla SOLO aplica cuando el usuario imprime desde el botón del Formulador */
+  body.printing-formulacion #topbar,
+  body.printing-formulacion #sidebar,
+  body.printing-formulacion .page-header,
+  body.printing-formulacion .ia-config,
+  body.printing-formulacion #formOutput > .card:first-child,
+  body.printing-formulacion #formHistoryCard,
+  body.printing-formulacion .formulacion-doc + .card,
+  body.printing-formulacion .page > *:not(#formOutput),
+  body.printing-formulacion #formOutput > .card:first-child{display:none !important}
+  body.printing-formulacion #formOutput{display:block !important}
+  body.printing-formulacion .formulacion-doc{
     border:none;
     padding:0;
     margin:0;
     max-width:100%;
     box-shadow:none;
   }
-  .formulacion-doc h2{page-break-after:avoid;page-break-before:auto}
-  .formulacion-doc .ingredient-card,.formulacion-doc blockquote,
-  .formulacion-doc .pcc-callout,.formulacion-doc .warn-callout,
-  .formulacion-doc .ok-callout{page-break-inside:avoid}
-  .formulacion-doc table{page-break-inside:avoid}
-  .formulacion-doc h1{font-size:22pt}
-  .formulacion-doc h2{font-size:14pt}
-  .formulacion-doc h3{font-size:11pt}
-  .formulacion-doc,.formulacion-doc p,.formulacion-doc li{font-size:10pt;line-height:1.55}
+  body.printing-formulacion .formulacion-doc h2{page-break-after:avoid;page-break-before:auto}
+  body.printing-formulacion .formulacion-doc .ingredient-card,
+  body.printing-formulacion .formulacion-doc blockquote,
+  body.printing-formulacion .formulacion-doc .pcc-callout,
+  body.printing-formulacion .formulacion-doc .warn-callout,
+  body.printing-formulacion .formulacion-doc .ok-callout{page-break-inside:avoid}
+  body.printing-formulacion .formulacion-doc table{page-break-inside:avoid}
+  body.printing-formulacion .formulacion-doc h1{font-size:22pt}
+  body.printing-formulacion .formulacion-doc h2{font-size:14pt}
+  body.printing-formulacion .formulacion-doc h3{font-size:11pt}
+  body.printing-formulacion .formulacion-doc,
+  body.printing-formulacion .formulacion-doc p,
+  body.printing-formulacion .formulacion-doc li{font-size:10pt;line-height:1.55}
 }
 </style>
 </head>
